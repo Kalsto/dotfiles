@@ -12,6 +12,8 @@ export ZSH="/root/.oh-my-zsh"
 #sunaku pygmalion kardan gnzh blinks agnoster robbyrussell
 ZSH_THEME="pygmalion"
 
+export EDITOR='vim'
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
