@@ -1,0 +1,6 @@
+config is setup as an alias to the git repository that's utilized for dot files
+
+config replaces git as the command to push files up
+
+
+pulled some of the base config from: atlassian.com/git/tutorials/dotfiles
