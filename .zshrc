@@ -63,6 +63,7 @@ plugins=(
   vscode
   themes
   zsh_reload
+  rsync
   zsh-navigation-tools
 #  zsh-interactive-cd - requires fzf
   )
