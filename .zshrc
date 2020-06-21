@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/root/.oh-my-zsh"
+export ZSH="/home/kaleb/.oh-my-zsh"
 
 
 # Good list of resources for zsh
@@ -91,3 +91,19 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias -s {yml,yaml}=vim
 alias -s {py}=vim
+
+
+# Start the zsh agent when this terminal is started
+if [ -z "$SSH_AUTH_SOCK" ]; then
+   # Check for a currently running instance of the agent
+   RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
+   if [ "$RUNNING_AGENT" = "0" ]; then
+        # Launch a new instance of the agent
+        ssh-agent -s &> ~/.ssh/ssh-agent
+   fi
+   eval `cat ~/.ssh/ssh-agent`
+fi
+
+
+
+# Check for tmux then sstart a tmux session - only needed on main system, but put it in here so it just works.
