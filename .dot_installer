@@ -1,0 +1,25 @@
+
+
+# Set this up to match what you need
+REPO=git@github.com:Kalsto/dotfiles.git
+
+# mkdir the working bare repo dir
+mkdir .cfg
+
+# Make sure .cfg folder is ignored
+echo ".cfg" >> .gitignore
+
+# Setup the config alias that will allow us to pull in the dot files
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Clone the repository
+git clone --bare ${REPO} $HOME/.cfg
+
+# Checkout the dot files
+config checkout
+
+# setup a couple git configs;
+config config --local status.showUntrackedFiles no
+
+
+
